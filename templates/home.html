@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Ahmed Essam </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    {%include "nav.html" %}
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4"> {{company_name}} Essam </h1>
+      <img class="img-fluid" id="banner" src="/static/my%20photo.jpeg" >
+      <h2 class="text-center mt-2 mb-4">About Me</h2>
+      <p class="lead">
+        أحمد عصام شاب سوداني عمره 22 سنة، يحب الكوميديا وصناعة المحتوى على تيك توك، وفي نفس الوقت يسعى لتطوير نفسه في مجال البرمجة وتعلم تطوير الواجهات الخلفية (Backend).
+      </p>
+      <h2 class="text-center mt-2 mb-4">My Skills</h2>
+      <p>
+        {%for job in jobs %}
+          {%include "jobitem.html"%}
+        {% endfor %}
+      </p>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg">Contact Me</button>
+        <p class="mt-4">copyright 2025, Jnkez</p>
+      </div>
+    </div>
+    {% include "footer.html"%}
+  </body>
+</html>
